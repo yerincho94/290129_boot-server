@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: 260129_boot-server
+  # JPA, H2(개발용 내장DB), MySQL
+  profiles:
+    active: dev # 개발할 때는 dev
+    # Docker로 빌드할 때나 외부에서 사용할 때는 prod를 주도록하자!
+
+# 배포 시 중요한 -> 서버포트
+server:
+#  port: 8080
+  port: ${SPRING_SERVER_PORT:8080}
