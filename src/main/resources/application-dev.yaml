@@ -1,3 +1,12 @@
 spring:
   datasource:
-    url: 
+    # 개발환경은 H2로 설정
+    # 아래 h2관련은 굳이 적지 않아도 기본으로 들어가지만, 그냥 명시만 해놓는..
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      # 개발용 내부 테스트 DB니까 삭제 처리해도 됨(실제로도 별다른 것 안하면 다 지워짐)

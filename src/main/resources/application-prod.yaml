@@ -1,0 +1,12 @@
+# 배포용
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    # 환경변수로 들어갈 예정
+  jpa:
+    hibernate:
+      ddl-auto: update
+      # update 보다 더 안전한 접근 -> validate, none이면 스키마-테이블 구조가 안만들어짐)
